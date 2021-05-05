@@ -143,12 +143,6 @@ static FSTNetworkMediator *_networkMediator = nil;
     return NO;
 }
 
-#pragma mark - Setter
-
-+ (void)setNetworInstance:(__kindof FSTNetworkMediator *)networInstance {
-    _networkMediator = networInstance;
-}
-
 #pragma mark - Private
 
 - (void)addInterceptor:(id<FSTInterceptable>)interceptor {
@@ -234,16 +228,16 @@ static FSTNetworkMediator *_networkMediator = nil;
 }
 
 - (void)start {
-    NSAssert([FSTConnectTask networInstance] != nil, @"networInstance should not be nil");
-    [[FSTConnectTask networInstance] addConnectTask:self];
+    NSAssert([[self class] networInstance] != nil, @"networInstance should not be nil");
+    [[[self class] networInstance] addConnectTask:self];
 }
 
 - (void)stop {
-    [[FSTConnectTask networInstance] removeConnectTask:self];
+    [[[self class] networInstance] removeConnectTask:self];
 }
 
 - (void)startWithSuccess:(FSTConnectTaskBlock)success failure:(FSTConnectTaskBlock)failure {
-    NSAssert([FSTConnectTask networInstance] != nil, @"networInstance should not be nil");
+    NSAssert([[self class] networInstance] != nil, @"networInstance should not be nil");
     [self requestWithCachePolicy:self.cachePolicy success:success failure:failure];
 }
 
@@ -286,7 +280,7 @@ static FSTNetworkMediator *_networkMediator = nil;
             return;
         }
         
-        __autoreleasing FSTResponseConvertBlock block = [FSTConnectTask networInstance].responseConvertBlock;
+        __autoreleasing FSTResponseConvertBlock block = [[connectTask class] networInstance].responseConvertBlock;
         NSAssert(block != nil, @"Configs FSTNetworkMediator +setConvertExecuteBodyUsingBlock:");
         if (block) {
             connectTask.convertObject = block(convert, jsonObject);

@@ -106,8 +106,8 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
 #pragma mark - Public
 
 + (void)responseWithConnectTask:(FSTConnectTask *)connectTask usingBlock:(void (^)(FSTConnectTask *_Nonnull))block {
-    NSString *key = [FSTConnectTask responseCacheKeyWithConnectTask:connectTask];
-    id<FSTResponseCacheable> cacheable = [FSTConnectTask networInstance].cacheInstance;
+    NSString *key = [[connectTask class] responseCacheKeyWithConnectTask:connectTask];
+    id<FSTResponseCacheable> cacheable = [[connectTask class] networInstance].cacheInstance;
     NSAssert(cacheable != nil, @"NetworkMediator cacheInstance should not be nil");
     NSAssert([cacheable respondsToSelector:@selector(cacheObjectForKey:usingBlock:)], @"NetworkMediator cacheInstance has not conform the 'ResponseCacheable' protocol");
     
@@ -136,14 +136,14 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
 }
 
 + (void)setResponseWithConnectTask:(FSTConnectTask *)connectTask usingBlock:(void (^)(FSTConnectTask *_Nonnull))block {
-    NSString *key = [FSTConnectTask responseCacheKeyWithConnectTask:connectTask];
+    NSString *key = [[connectTask class] responseCacheKeyWithConnectTask:connectTask];
     if (connectTask.responseObject && key) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         [dict setValue:connectTask.responseObject forKey:FSTResponseObjectKey];
         [dict setValue:connectTask.response forKey:FSTResponseKey];
         NSDictionary *info = [NSDictionary dictionaryWithDictionary:dict];
         
-        id<FSTResponseCacheable> cacheable = [FSTConnectTask networInstance].cacheInstance;
+        id<FSTResponseCacheable> cacheable = [[connectTask class] networInstance].cacheInstance;
         NSAssert(cacheable != nil, @"cacheInstance should not be nil");
         NSAssert([cacheable respondsToSelector:@selector(setCacheObject:forKey:usingBlock:)], @"NetworkMediator cacheInstance has not conform the 'ResponseCacheable' protocol");
         
@@ -162,8 +162,8 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
 }
 
 + (void)removeResponseWithConnectTask:(FSTConnectTask *)connectTask usingBlock:(void (^)(NSString *_Nonnull))block {
-    NSString *key = [FSTConnectTask responseCacheKeyWithConnectTask:connectTask];
-    id<FSTResponseCacheable> cacheable = [FSTConnectTask networInstance].cacheInstance;
+    NSString *key = [[connectTask class] responseCacheKeyWithConnectTask:connectTask];
+    id<FSTResponseCacheable> cacheable = [[connectTask class] networInstance].cacheInstance;
     NSAssert(cacheable != nil, @"NetworkMediator cacheInstance should not be nil");
     NSAssert([cacheable respondsToSelector:@selector(removeObjectForKey:)], @"NetworkMediator cacheInstance has not conform the 'ResponseCacheable' protocol");
     
@@ -203,7 +203,7 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
     }
     
     NSArray<id<FSTInterceptable>> *local = self.interceptors;
-    NSArray<id<FSTInterceptable>> *global = [FSTConnectTask networInstance].globalInterceptors;
+    NSArray<id<FSTInterceptable>> *global = [[self class] networInstance].globalInterceptors;
     if (local.count || global.count) {
         // 拦截器调用顺序实现使用优先级队列的思路，全局拦截器默认优先级 > 局部拦截器默认优先级
         // 1.处理所有局部拦截器
@@ -295,18 +295,18 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
 #pragma mark - Public
 
 - (FSTInterceptor *)connectTaskWillStart {
-    return [FSTConnectTask buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorWillStart:)];
+    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorWillStart:)];
 }
 
 - (FSTInterceptor *)connectTaskDidFinishWithResponseObject:(id)responseObject responseData:(NSData *)responseData {
     self.responseObject = responseObject;
     self.responseData = responseData;
-    return [FSTConnectTask buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidFinish:)];
+    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidFinish:)];
 }
 
 - (FSTInterceptor *)connectTaskDidError:(NSError *)error {
     self.error = error;
-    return [FSTConnectTask buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidError:)];
+    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidError:)];
 }
 
 @end

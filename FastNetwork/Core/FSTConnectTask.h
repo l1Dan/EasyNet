@@ -104,8 +104,8 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 
 @interface FSTConnectTask : NSObject
 
-/// 网络请求实例对象，NetworkMediator 或者子类，子类最好使用单例设计，可选重写
-@property (nonatomic, strong, class) FSTNetworkMediator __kindof *networInstance;
+/// 设置网络请求实例对象，NetworkMediator 或者子类，子类最好使用单例设计，可选重写，则内部默认使用 FSTNetworkMediator 单例
+@property (nonatomic, strong, readonly, class) FSTNetworkMediator __kindof *networInstance;
 
 #pragma mark - ####################### 必须重写 #######################
 
