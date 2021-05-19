@@ -1,2 +1,3 @@
-# FastNetwork
-Fast network base-on AFNetworking for iOS
+# EasyNet
+
+EasyNet base-on AFNetworking for iOS
