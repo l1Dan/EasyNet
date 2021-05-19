@@ -63,7 +63,7 @@
 - (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
     NSString *oldValue = [self valueForHTTPHeaderField:field];
     if (oldValue && value) {
-        [self setValue:[NSString stringWithFormat:@"%@,%@", oldValue, value] forKey:field.lowercaseString];
+        [self setValue:[NSString stringWithFormat:@"%@,%@", oldValue, value] forHTTPHeaderField:field];
     } else {
         [self setValue:value forHTTPHeaderField:field];
     }

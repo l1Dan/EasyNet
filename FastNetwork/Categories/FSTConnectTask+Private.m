@@ -121,7 +121,7 @@ static const NSString *FSTInterceptScopeGlobal = @"Scope-2";
                     block(connectTask);
                 }
             } else {
-                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Cannot not found the cached data!"};
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Can't found the cached data!"};
                 connectTask.error = [NSError errorWithDomain:FSTConnectTaskCacheNotFoundErrorDomain code:FSTConnectTaskCacheNotFoundErrorCode userInfo:userInfo];
                 if (block) {
                     block(connectTask);

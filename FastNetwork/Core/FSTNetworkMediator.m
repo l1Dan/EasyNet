@@ -137,30 +137,29 @@ static pthread_mutex_t _lock;
     }
 }
 
-- (NSString *)incompleteCachePathForDownloadPath {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    static NSString *cacheFolder = nil;
-    
-    if (cacheFolder == nil) {
-        NSString *cacheDir = NSTemporaryDirectory();
-        cacheFolder = [cacheDir stringByAppendingPathComponent:@"incomplete"];
+- (NSString *)incompleteDownloadTempCacheFolder {
+    NSFileManager *fileManager = [NSFileManager new];
+    NSString *cacheFolder = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Incomplete"];
+
+    BOOL isDirectory = NO;
+    if ([fileManager fileExistsAtPath:cacheFolder isDirectory:&isDirectory] && isDirectory) {
+        return cacheFolder;
     }
-    
     NSError *error = nil;
-    if (![fileManager createDirectoryAtPath:cacheFolder withIntermediateDirectories:YES attributes:nil error:&error]) {
-        cacheFolder = nil;
+    if ([fileManager createDirectoryAtPath:cacheFolder withIntermediateDirectories:YES attributes:nil error:&error] && error == nil) {
+        return cacheFolder;
     }
-    return cacheFolder;
+    return nil;
 }
 
-- (nullable NSURL *)incompleteCachePathForDownloadPath:(NSString *)downloadPath {
-    if (downloadPath == nil) {
+- (NSURL *)incompleteDownloadTempPathForDownloadPath:(NSString *)downloadPath {
+    if (downloadPath == nil || downloadPath.length == 0) {
         return nil;
     }
-    
-    NSString *string = downloadPath.fst_md5String;
-    NSString *path = [[self incompleteCachePathForDownloadPath] stringByAppendingPathComponent:string];
-    return path ? [NSURL fileURLWithPath:path] : nil;
+    NSString *tempPath = nil;
+    NSString *md5URLString = downloadPath.fst_md5String;
+    tempPath = [[self incompleteDownloadTempCacheFolder] stringByAppendingPathComponent:md5URLString];
+    return tempPath == nil ? nil : [NSURL fileURLWithPath:tempPath];
 }
 
 - (NSString *)prepareRequest:(NSURLRequest *)request downloadPath:(NSString *)downloadPath error:(NSError *_Nullable __autoreleasing *)error {
@@ -261,7 +260,7 @@ static pthread_mutex_t _lock;
                                                      error:(NSError *_Nullable __autoreleasing *)error {
     __block NSURLSessionDownloadTask *downloadTask = nil;
     BOOL resumeSucceeded = NO;
-    NSURL *cacheURL = [self incompleteCachePathForDownloadPath:downloadPath];
+    NSURL *cacheURL = [self incompleteDownloadTempPathForDownloadPath:downloadPath];
     NSData *data = [NSData dataWithContentsOfURL:cacheURL];
     
     NSMutableURLRequest *request = [requestSerializer requestWithMethod:FSTMethodTypeGet URLString:URLString parameters:parameters error:error];
@@ -431,7 +430,7 @@ static pthread_mutex_t _lock;
     connectTask.error = error;
     NSURL *cacheURL = nil;
     if (connectTask.resumableDownloadPath) {
-        cacheURL = [self incompleteCachePathForDownloadPath:connectTask.resumableDownloadPath];
+        cacheURL = [self incompleteDownloadTempPathForDownloadPath:connectTask.resumableDownloadPath];
     }
     
     NSData *cacheDownloadData = error.userInfo[NSURLSessionDownloadTaskResumeData];
@@ -513,7 +512,7 @@ static pthread_mutex_t _lock;
 }
 
 - (void)removeConnectTask:(FSTConnectTask *)connectTask {
-    NSURL *cacheURL = [self incompleteCachePathForDownloadPath:connectTask.resumableDownloadPath];
+    NSURL *cacheURL = [self incompleteDownloadTempPathForDownloadPath:connectTask.resumableDownloadPath];
     if (connectTask.resumableDownloadPath && cacheURL) {
         NSURLSessionDownloadTask *task = (NSURLSessionDownloadTask *)connectTask.requestTask;
         [task cancelByProducingResumeData:^(NSData *_Nullable resumeData) {

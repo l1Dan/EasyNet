@@ -96,8 +96,7 @@ NSString *_FSTPercentEscapedStringFromString(NSString *string) {
     if (!self.value || [self.value isEqual:[NSNull null]]) {
         return _FSTPercentEscapedStringFromString([self.field description]);
     } else {
-        return [NSString
-                stringWithFormat:@"%@=%@", _FSTPercentEscapedStringFromString([self.field description]), _FSTPercentEscapedStringFromString([self.value description])];
+        return [NSString stringWithFormat:@"%@=%@", _FSTPercentEscapedStringFromString([self.field description]), _FSTPercentEscapedStringFromString([self.value description])];
     }
 }
 
@@ -127,9 +126,7 @@ NSArray *_FSTQueryStringPairsFromKeyAndValue(NSString *key, id value) {
         for (id nestedKey in [dictionary.allKeys sortedArrayUsingDescriptors:@[sortDescriptor]]) {
             id nestedValue = dictionary[nestedKey];
             if (nestedValue) {
-                [mutableQueryStringComponents
-                 addObjectsFromArray:_FSTQueryStringPairsFromKeyAndValue((key ? [NSString stringWithFormat:@"%@[%@]", key, nestedKey] : nestedKey),
-                                                                         nestedValue)];
+                [mutableQueryStringComponents addObjectsFromArray:_FSTQueryStringPairsFromKeyAndValue((key ? [NSString stringWithFormat:@"%@[%@]", key, nestedKey] : nestedKey), nestedValue)];
             }
         }
     } else if ([value isKindOfClass:[NSArray class]]) {
@@ -186,6 +183,14 @@ NSArray *_FSTQueryStringPairsFromKeyAndValue(NSString *key, id value) {
 }
 
 + (NSString *)_fst_buildPathWithBaseURL:(NSString *)baseURL requestURL:(NSString *)requestURL {
+    if (requestURL && requestURL.length) {
+        requestURL = [requestURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    }
+    
+    if (baseURL && baseURL.length) {
+        baseURL = [baseURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    }
+    
     NSURL *url = [NSURL URLWithString:requestURL];
     if (url && url.host && url.scheme) {
         return [url absoluteString];
