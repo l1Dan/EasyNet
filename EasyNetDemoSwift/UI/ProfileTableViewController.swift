@@ -77,7 +77,8 @@ extension ProfileTableViewController {
     
     private func sendUserProfileRequest() {
         SVProgressHUD.show(withStatus: nil)
-        NetworkClient.default.requestUser(withUserId: userId) { request in
+        
+        UserRequest(userId: userId).rx.start(withConvert: UserResponse.self).subscribe { request in
             SVProgressHUD.showSuccess(withStatus: nil)
             SVProgressHUD.dismiss(withDelay: 0.2)
             
@@ -85,11 +86,11 @@ extension ProfileTableViewController {
                 self.itemsObservable.accept(UserModel(userResponse: response).profiles)
                 self.navigationItem.title = response.name
             }
-        } failure: { request in
+        } onFailure: { error in
             SVProgressHUD.showSuccess(withStatus: nil)
             SVProgressHUD.dismiss(withDelay: 0.2)
-            print(request.error ?? "")
-        }
+            print(error)
+        }.disposed(by: disposeBag)
     }
     
 }

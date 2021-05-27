@@ -4,6 +4,8 @@ use_frameworks!
 
 target 'EasyNet' do
   pod 'AFNetworking'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
 

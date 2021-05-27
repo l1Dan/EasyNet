@@ -1,0 +1,5 @@
+framework module EasyNet {
+    umbrella header "EasyNet.h"
+    export *
+    module * { export * }
+}

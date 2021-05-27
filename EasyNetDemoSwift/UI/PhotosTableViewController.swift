@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SVProgressHUD
+import EasyNet
 
 class PhotosTableViewController: UIViewController {
     
@@ -84,17 +85,18 @@ extension PhotosTableViewController {
     
     private func sendRequest() {
         SVProgressHUD.show(withStatus: nil)
-        NetworkClient.default.requestPhotos { request in
+        
+        PhotosRequest().rx.start(withConvert: PhotoResponse.self).subscribe { request in
             SVProgressHUD.showSuccess(withStatus: nil)
             SVProgressHUD.dismiss(withDelay: 0.2)
             if let responses = request.convertObject as? [PhotoResponse] {
                 self.itemsObservable.accept(responses.map { PhotoModel(photoResponse: $0) })
             }
-        } failure: { request in
+        } onFailure: { error in
             SVProgressHUD.showSuccess(withStatus: nil)
             SVProgressHUD.dismiss(withDelay: 0.2)
-            print(request.error ?? "")
-        }
+            print(error)
+        }.disposed(by: disposeBag)
     }
     
 }

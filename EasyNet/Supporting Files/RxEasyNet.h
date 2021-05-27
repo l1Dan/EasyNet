@@ -1,5 +1,5 @@
 //
-// EasyNet.h
+// RxEasyNet.h
 //
 // Copyright (c) 2021 Leo Lee EasyNet (https://github.com/l1Dan/EasyNet)
 //
@@ -23,33 +23,12 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef EasyNet_h
-#define EasyNet_h
+//! Project version number for RxEasyNet.
+FOUNDATION_EXPORT double RxEasyNetVersionNumber;
 
-#if __has_include(<EasyNet/EasyNet.h>)
+//! Project version string for RxEasyNet.
+FOUNDATION_EXPORT const unsigned char RxEasyNetVersionString[];
 
-//! Project version number for EasyNet.
-FOUNDATION_EXPORT double EasyNetVersionNumber;
-
-//! Project version string for EasyNet.
-FOUNDATION_EXPORT const unsigned char EasyNetVersionString[];
-
-#import <EasyNet/ENConnectTask.h>
-#import <EasyNet/ENInterceptor.h>
-#import <EasyNet/ENNetworkAgent.h>
-#import <EasyNet/NSString+ENConnectTask.h>
-#import <EasyNet/NSURLSession+HTTPProxy.h>
-
-#else
-
-#import "ENConnectTask.h"
-#import "ENInterceptor.h"
-#import "ENNetworkAgent.h"
-#import "NSString+ENConnectTask.h"
-#import "NSURLSession+HTTPProxy.h"
-
-#endif /* __has_include */
-
-#endif /* EasyNet_h */
+// In this header, you should import all the public headers of your framework using statements like #import <RxEasyNet/PublicHeader.h>
 
 
