@@ -8,16 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		43F1C4F224B7A829401ABC1F /* Pods_EasyNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328484F3363CF2B3028C7A67 /* Pods_EasyNet.framework */; };
+		7046BA7FC5584B4EEA8F8122 /* Pods_EasyNetDemo_EasyNetDemoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5572BA87DEB14F75EDF33D1 /* Pods_EasyNetDemo_EasyNetDemoSwift.framework */; };
 		A9B20C682739D335558DF452 /* Pods_EasyNetDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9085036626B0DCB75B2888B1 /* Pods_EasyNetDemo.framework */; };
 		D60C51282641BAA20064FEC3 /* AccessResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C51272641BAA20064FEC3 /* AccessResponse.m */; };
 		D60C512B2641BAD30064FEC3 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C512A2641BAD30064FEC3 /* BaseResponse.m */; };
 		D612FDE126386A420027848D /* EasyNet.h in Headers */ = {isa = PBXBuildFile; fileRef = D612FDDF26386A420027848D /* EasyNet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D612FE0926386AB70027848D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D612FE0826386AB70027848D /* AppDelegate.m */; };
 		D612FE0F26386AB70027848D /* PhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D612FE0E26386AB70027848D /* PhotosTableViewController.m */; };
-		D612FE1226386AB70027848D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D612FE1026386AB70027848D /* Main.storyboard */; };
 		D612FE1426386AB80027848D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D612FE1326386AB80027848D /* Assets.xcassets */; };
 		D612FE1726386AB80027848D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D612FE1526386AB80027848D /* LaunchScreen.storyboard */; };
 		D612FE1A26386AB80027848D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D612FE1926386AB80027848D /* main.m */; };
+		D62686E7265F7A8800518CCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62686E6265F7A8800518CCC /* AppDelegate.swift */; };
+		D62686EB265F7A8800518CCC /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62686EA265F7A8800518CCC /* PhotosTableViewController.swift */; };
+		D62686F8265F7DF700518CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D612FE1326386AB80027848D /* Assets.xcassets */; };
+		D62686F9265F7E0A00518CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D612FE1526386AB80027848D /* LaunchScreen.storyboard */; };
+		D65F46E4265F7FAF00244731 /* EasyNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D612FDDC26386A420027848D /* EasyNet.framework */; };
+		D65F46E5265F7FAF00244731 /* EasyNet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D612FDDC26386A420027848D /* EasyNet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D65F46EA265F928A00244731 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65F46E9265F928A00244731 /* ProfileTableViewController.swift */; };
+		D65F46F2265F955200244731 /* LoggerInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A60B9426387AF7004AF28B /* LoggerInterceptor.m */; };
+		D65F46F3265F955B00244731 /* NetworkReachInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A88B2641AA9E009DB183 /* NetworkReachInterceptor.m */; };
+		D65F46F4265F956900244731 /* NetworkListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8892641AA60009DB183 /* NetworkListener.m */; };
+		D65F46F5265F957000244731 /* AccessClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8982641AD20009DB183 /* AccessClient.m */; };
+		D65F46F6265F957300244731 /* NetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8952641AD14009DB183 /* NetworkClient.m */; };
+		D65F46F7265F957900244731 /* AccessTokenInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A60B9726387B89004AF28B /* AccessTokenInterceptor.m */; };
+		D65F46F8265F95A300244731 /* AccessRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8A12641ADF9009DB183 /* AccessRequest.m */; };
+		D65F46F9265F95A600244731 /* AccessResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C51272641BAA20064FEC3 /* AccessResponse.m */; };
+		D65F46FA265F95AE00244731 /* AccessClient+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8A52641B1B6009DB183 /* AccessClient+Request.m */; };
+		D65F46FB265F95B200244731 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A89E2641ADEC009DB183 /* BaseRequest.m */; };
+		D65F46FC265F95B600244731 /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C512A2641BAD30064FEC3 /* BaseResponse.m */; };
+		D65F46FD265F95BA00244731 /* NetworkClient+Request.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9A8A82641B1EE009DB183 /* NetworkClient+Request.m */; };
+		D65F46FE265F95FE00244731 /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F62264263FA00516648 /* PhotoModel.m */; };
+		D65F46FF265F960400244731 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F5E26425F8000516648 /* PhotosTableViewCell.m */; };
+		D65F4700265F960800244731 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F722642710600516648 /* UserModel.m */; };
+		D65F4701265F960B00244731 /* ProfileTableViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F752642711600516648 /* ProfileTableViewPresenter.m */; };
+		D65F4702265F960F00244731 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F782642787E00516648 /* ProfileTableViewCell.m */; };
+		D65F4709265F987E00244731 /* EasyNetDemo.app in Resources */ = {isa = PBXBuildFile; fileRef = D612FE0526386AB70027848D /* EasyNetDemo.app */; };
 		D6A60B9526387AF7004AF28B /* LoggerInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A60B9426387AF7004AF28B /* LoggerInterceptor.m */; };
 		D6A60B9826387B89004AF28B /* AccessTokenInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A60B9726387B89004AF28B /* AccessTokenInterceptor.m */; };
 		D6D17F5926425F3700516648 /* PhotosTableViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D17F5826425F3700516648 /* PhotosTableViewPresenter.m */; };
@@ -54,6 +79,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D65F46E6265F7FAF00244731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D612FDD326386A420027848D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D612FDDB26386A420027848D;
+			remoteInfo = EasyNet;
+		};
+		D65F470A265F987E00244731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D612FDD326386A420027848D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D612FE0426386AB70027848D;
+			remoteInfo = EasyNetDemo;
+		};
+		D65F470C265F988300244731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D612FDD326386A420027848D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D612FE0426386AB70027848D;
+			remoteInfo = EasyNetDemo;
+		};
 		D6F9A88426419594009DB183 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D612FDD326386A420027848D /* Project object */;
@@ -64,6 +110,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D65F46E8265F7FAF00244731 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D65F46E5265F7FAF00244731 /* EasyNet.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6F9A88626419594009DB183 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,13 +137,17 @@
 /* Begin PBXFileReference section */
 		0006EB720F65B00C9DF7E99C /* Pods-EasyNetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo.release.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo/Pods-EasyNetDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1071FC2451AC042ED4EB2020 /* Pods-EasyNetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo.debug.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo/Pods-EasyNetDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		110B4E6B1F5834B274B8C429 /* Pods-EasyNetDemo-EasyNetDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo-EasyNetDemoSwift.release.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo-EasyNetDemoSwift/Pods-EasyNetDemo-EasyNetDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		1FF26FA931F76DE29127D7CB /* Pods-EasyNetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo.release.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo/Pods-EasyNetDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2F195E8B69371A26A161537D /* Pods-EasyNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNet.release.xcconfig"; path = "Target Support Files/Pods-EasyNet/Pods-EasyNet.release.xcconfig"; sourceTree = "<group>"; };
 		328484F3363CF2B3028C7A67 /* Pods_EasyNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC363E90237806C653E3976 /* Pods-EasyNetDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemoSwift.debug.xcconfig"; path = "Target Support Files/Pods-EasyNetDemoSwift/Pods-EasyNetDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		40BE99F39DAD90BF53E900D1 /* Pods-EasyNetDemo-EasyNetDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo-EasyNetDemoSwift.debug.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo-EasyNetDemoSwift/Pods-EasyNetDemo-EasyNetDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		6E5D86D8BF3EE6B1C27A262E /* Pods-EasyNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNet.release.xcconfig"; path = "Target Support Files/Pods-EasyNet/Pods-EasyNet.release.xcconfig"; sourceTree = "<group>"; };
 		7956B747609520C12AC75F36 /* Pods-EasyNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNet.debug.xcconfig"; path = "Target Support Files/Pods-EasyNet/Pods-EasyNet.debug.xcconfig"; sourceTree = "<group>"; };
 		9085036626B0DCB75B2888B1 /* Pods_EasyNetDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNetDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D3A0E839AF8E49A37719C5 /* Pods-EasyNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNet.debug.xcconfig"; path = "Target Support Files/Pods-EasyNet/Pods-EasyNet.debug.xcconfig"; sourceTree = "<group>"; };
+		C8EE378CC8B12C17B79BEC5D /* Pods-EasyNetDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemoSwift.release.xcconfig"; path = "Target Support Files/Pods-EasyNetDemoSwift/Pods-EasyNetDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D60C51262641BAA20064FEC3 /* AccessResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessResponse.h; sourceTree = "<group>"; };
 		D60C51272641BAA20064FEC3 /* AccessResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessResponse.m; sourceTree = "<group>"; };
 		D60C51292641BAD30064FEC3 /* BaseResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseResponse.h; sourceTree = "<group>"; };
@@ -99,11 +160,15 @@
 		D612FE0826386AB70027848D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D612FE0D26386AB70027848D /* PhotosTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewController.h; sourceTree = "<group>"; };
 		D612FE0E26386AB70027848D /* PhotosTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewController.m; sourceTree = "<group>"; };
-		D612FE1126386AB70027848D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D612FE1326386AB80027848D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D612FE1626386AB80027848D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D612FE1826386AB80027848D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D612FE1926386AB80027848D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D62686E4265F7A8800518CCC /* EasyNetDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNetDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62686E6265F7A8800518CCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D62686EA265F7A8800518CCC /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		D65F46E9265F928A00244731 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		D65F470E265F98D900244731 /* EasyNetDemoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyNetDemoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6A60B9326387AF7004AF28B /* LoggerInterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoggerInterceptor.h; sourceTree = "<group>"; };
 		D6A60B9426387AF7004AF28B /* LoggerInterceptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoggerInterceptor.m; sourceTree = "<group>"; };
 		D6A60B9626387B89004AF28B /* AccessTokenInterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessTokenInterceptor.h; sourceTree = "<group>"; };
@@ -154,6 +219,7 @@
 		D6F9A8A52641B1B6009DB183 /* AccessClient+Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AccessClient+Request.m"; sourceTree = "<group>"; };
 		D6F9A8A72641B1EE009DB183 /* NetworkClient+Request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkClient+Request.h"; sourceTree = "<group>"; };
 		D6F9A8A82641B1EE009DB183 /* NetworkClient+Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NetworkClient+Request.m"; sourceTree = "<group>"; };
+		E5572BA87DEB14F75EDF33D1 /* Pods_EasyNetDemo_EasyNetDemoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyNetDemo_EasyNetDemoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5C5E4430071DD5C33551E1 /* Pods-EasyNetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNetDemo.debug.xcconfig"; path = "Target Support Files/Pods-EasyNetDemo/Pods-EasyNetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +241,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D62686E1265F7A8800518CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D65F46E4265F7FAF00244731 /* EasyNet.framework in Frameworks */,
+				7046BA7FC5584B4EEA8F8122 /* Pods_EasyNetDemo_EasyNetDemoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -189,6 +264,10 @@
 				2F195E8B69371A26A161537D /* Pods-EasyNet.release.xcconfig */,
 				1071FC2451AC042ED4EB2020 /* Pods-EasyNetDemo.debug.xcconfig */,
 				0006EB720F65B00C9DF7E99C /* Pods-EasyNetDemo.release.xcconfig */,
+				3BC363E90237806C653E3976 /* Pods-EasyNetDemoSwift.debug.xcconfig */,
+				C8EE378CC8B12C17B79BEC5D /* Pods-EasyNetDemoSwift.release.xcconfig */,
+				40BE99F39DAD90BF53E900D1 /* Pods-EasyNetDemo-EasyNetDemoSwift.debug.xcconfig */,
+				110B4E6B1F5834B274B8C429 /* Pods-EasyNetDemo-EasyNetDemoSwift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -198,6 +277,8 @@
 			children = (
 				D612FDDE26386A420027848D /* EasyNet */,
 				D612FE0626386AB70027848D /* EasyNetDemo */,
+				D62686E5265F7A8800518CCC /* EasyNetDemoSwift */,
+				D6F9A8902641AC4F009DB183 /* Supporting Files */,
 				E55BACBF459B4ED8DF68768A /* Frameworks */,
 				55D13B0460DEAC08F3EDF037 /* Pods */,
 				D612FDDD26386A420027848D /* Products */,
@@ -209,6 +290,7 @@
 			children = (
 				D612FDDC26386A420027848D /* EasyNet.framework */,
 				D612FE0526386AB70027848D /* EasyNetDemo.app */,
+				D62686E4265F7A8800518CCC /* EasyNetDemoSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,15 +335,41 @@
 		D612FE0626386AB70027848D /* EasyNetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D6D17F6626426BF600516648 /* UI */,
 				D6D17F6426426BD600516648 /* Data */,
 				D6F9A88F2641AC44009DB183 /* Other */,
-				D6F9A8902641AC4F009DB183 /* Supporting Files */,
-				D6D17F6626426BF600516648 /* UI */,
 			);
 			path = EasyNetDemo;
 			sourceTree = "<group>";
 		};
-		D6A60B9226387AD1004AF28B /* Logger */ = {
+		D62686E5265F7A8800518CCC /* EasyNetDemoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				D65F46EB265F92F200244731 /* UI */,
+				D65F46EC265F92FE00244731 /* Other */,
+			);
+			path = EasyNetDemoSwift;
+			sourceTree = "<group>";
+		};
+		D65F46EB265F92F200244731 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D62686EA265F7A8800518CCC /* PhotosTableViewController.swift */,
+				D65F46E9265F928A00244731 /* ProfileTableViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D65F46EC265F92FE00244731 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D62686E6265F7A8800518CCC /* AppDelegate.swift */,
+				D65F470E265F98D900244731 /* EasyNetDemoSwift-Bridging-Header.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D6A60B9226387AD1004AF28B /* Interceptors */ = {
 			isa = PBXGroup;
 			children = (
 				D6A60B9626387B89004AF28B /* AccessTokenInterceptor.h */,
@@ -271,7 +379,7 @@
 				D6F9A88C2641AA9E009DB183 /* NetworkReachInterceptor.h */,
 				D6F9A88B2641AA9E009DB183 /* NetworkReachInterceptor.m */,
 			);
-			path = Logger;
+			path = Interceptors;
 			sourceTree = "<group>";
 		};
 		D6D17F5426425EBB00516648 /* Views */ = {
@@ -286,8 +394,6 @@
 		D6D17F5526425EBF00516648 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D612FE1526386AB80027848D /* LaunchScreen.storyboard */,
-				D612FE1026386AB70027848D /* Main.storyboard */,
 				D612FE0D26386AB70027848D /* PhotosTableViewController.h */,
 				D612FE0E26386AB70027848D /* PhotosTableViewController.m */,
 				D6D17F5A26425F5600516648 /* PhotosTableViewDataSource.h */,
@@ -318,8 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				D6F9A8932641ACD8009DB183 /* Clients */,
+				D6A60B9226387AD1004AF28B /* Interceptors */,
 				D6F9A8872641AA60009DB183 /* Listener */,
-				D6A60B9226387AD1004AF28B /* Logger */,
 				D6F9A8A32641B142009DB183 /* Services */,
 			);
 			path = Data;
@@ -444,6 +550,7 @@
 			children = (
 				D612FE1326386AB80027848D /* Assets.xcassets */,
 				D612FE1826386AB80027848D /* Info.plist */,
+				D612FE1526386AB80027848D /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -473,6 +580,7 @@
 			children = (
 				328484F3363CF2B3028C7A67 /* Pods_EasyNet.framework */,
 				9085036626B0DCB75B2888B1 /* Pods_EasyNetDemo.framework */,
+				E5572BA87DEB14F75EDF33D1 /* Pods_EasyNetDemo_EasyNetDemoSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -537,18 +645,45 @@
 			productReference = D612FE0526386AB70027848D /* EasyNetDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D62686E3265F7A8800518CCC /* EasyNetDemoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D62686F7265F7A8D00518CCC /* Build configuration list for PBXNativeTarget "EasyNetDemoSwift" */;
+			buildPhases = (
+				24C2FDE3107FB1BC67D4741B /* [CP] Check Pods Manifest.lock */,
+				D62686E0265F7A8800518CCC /* Sources */,
+				D62686E1265F7A8800518CCC /* Frameworks */,
+				D62686E2265F7A8800518CCC /* Resources */,
+				1B64D9F1145BE5A46372D058 /* [CP] Embed Pods Frameworks */,
+				D65F46E8265F7FAF00244731 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D65F46E7265F7FAF00244731 /* PBXTargetDependency */,
+				D65F470B265F987E00244731 /* PBXTargetDependency */,
+				D65F470D265F988300244731 /* PBXTargetDependency */,
+			);
+			name = EasyNetDemoSwift;
+			productName = EasyNetDemoSwift;
+			productReference = D62686E4265F7A8800518CCC /* EasyNetDemoSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D612FDD326386A420027848D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					D612FDDB26386A420027848D = {
 						CreatedOnToolsVersion = 12.5;
 					};
 					D612FE0426386AB70027848D = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					D62686E3265F7A8800518CCC = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -568,6 +703,7 @@
 			targets = (
 				D612FDDB26386A420027848D /* EasyNet */,
 				D612FE0426386AB70027848D /* EasyNetDemo */,
+				D62686E3265F7A8800518CCC /* EasyNetDemoSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -586,13 +722,39 @@
 			files = (
 				D612FE1726386AB80027848D /* LaunchScreen.storyboard in Resources */,
 				D612FE1426386AB80027848D /* Assets.xcassets in Resources */,
-				D612FE1226386AB70027848D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D62686E2265F7A8800518CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D62686F8265F7DF700518CCC /* Assets.xcassets in Resources */,
+				D62686F9265F7E0A00518CCC /* LaunchScreen.storyboard in Resources */,
+				D65F4709265F987E00244731 /* EasyNetDemo.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B64D9F1145BE5A46372D058 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyNetDemo-EasyNetDemoSwift/Pods-EasyNetDemo-EasyNetDemoSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyNetDemo-EasyNetDemoSwift/Pods-EasyNetDemo-EasyNetDemoSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyNetDemo-EasyNetDemoSwift/Pods-EasyNetDemo-EasyNetDemoSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1CBCABB5EB3D3F645A362AF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +771,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-EasyNet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24C2FDE3107FB1BC67D4741B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyNetDemo-EasyNetDemoSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -701,9 +885,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D62686E0265F7A8800518CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D65F46EA265F928A00244731 /* ProfileTableViewController.swift in Sources */,
+				D65F46F5265F957000244731 /* AccessClient.m in Sources */,
+				D65F46FE265F95FE00244731 /* PhotoModel.m in Sources */,
+				D65F46F3265F955B00244731 /* NetworkReachInterceptor.m in Sources */,
+				D65F4701265F960B00244731 /* ProfileTableViewPresenter.m in Sources */,
+				D65F46F6265F957300244731 /* NetworkClient.m in Sources */,
+				D65F46F4265F956900244731 /* NetworkListener.m in Sources */,
+				D65F46F2265F955200244731 /* LoggerInterceptor.m in Sources */,
+				D62686EB265F7A8800518CCC /* PhotosTableViewController.swift in Sources */,
+				D65F4700265F960800244731 /* UserModel.m in Sources */,
+				D65F46FB265F95B200244731 /* BaseRequest.m in Sources */,
+				D62686E7265F7A8800518CCC /* AppDelegate.swift in Sources */,
+				D65F46F9265F95A600244731 /* AccessResponse.m in Sources */,
+				D65F4702265F960F00244731 /* ProfileTableViewCell.m in Sources */,
+				D65F46FD265F95BA00244731 /* NetworkClient+Request.m in Sources */,
+				D65F46F7265F957900244731 /* AccessTokenInterceptor.m in Sources */,
+				D65F46FF265F960400244731 /* PhotosTableViewCell.m in Sources */,
+				D65F46FC265F95B600244731 /* BaseResponse.m in Sources */,
+				D65F46FA265F95AE00244731 /* AccessClient+Request.m in Sources */,
+				D65F46F8265F95A300244731 /* AccessRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D65F46E7265F7FAF00244731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D612FDDB26386A420027848D /* EasyNet */;
+			targetProxy = D65F46E6265F7FAF00244731 /* PBXContainerItemProxy */;
+		};
+		D65F470B265F987E00244731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D612FE0426386AB70027848D /* EasyNetDemo */;
+			targetProxy = D65F470A265F987E00244731 /* PBXContainerItemProxy */;
+		};
+		D65F470D265F988300244731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D612FE0426386AB70027848D /* EasyNetDemo */;
+			targetProxy = D65F470C265F988300244731 /* PBXContainerItemProxy */;
+		};
 		D6F9A88526419594009DB183 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D612FDDB26386A420027848D /* EasyNet */;
@@ -712,15 +938,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D612FE1026386AB70027848D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D612FE1126386AB70027848D /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		D612FE1526386AB80027848D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -909,7 +1126,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV54GVQ3K7;
-				INFOPLIST_FILE = "$(SRCROOT)/EasyNetDemo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -929,7 +1146,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV54GVQ3K7;
-				INFOPLIST_FILE = "$(SRCROOT)/EasyNetDemo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -937,6 +1154,54 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.FastNetworkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D62686F5265F7A8D00518CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40BE99F39DAD90BF53E900D1 /* Pods-EasyNetDemo-EasyNetDemoSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BHD34642BX;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.EasyNetDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/EasyNetDemoSwift/Other/EasyNetDemoSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D62686F6265F7A8D00518CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110B4E6B1F5834B274B8C429 /* Pods-EasyNetDemo-EasyNetDemoSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BHD34642BX;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.EasyNetDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/EasyNetDemoSwift/Other/EasyNetDemoSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -967,6 +1232,15 @@
 			buildConfigurations = (
 				D612FE1C26386AB80027848D /* Debug */,
 				D612FE1D26386AB80027848D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D62686F7265F7A8D00518CCC /* Build configuration list for PBXNativeTarget "EasyNetDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D62686F5265F7A8D00518CCC /* Debug */,
+				D62686F6265F7A8D00518CCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

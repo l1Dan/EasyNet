@@ -25,7 +25,7 @@
 - (void)setPhotoModel:(PhotoModel *)photoModel {
     _photoModel = photoModel;
     self.textLabel.text = photoModel.title;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photoModel.thumbnailUrl]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:photoModel.thumbnailUrl] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 }
 
 @end

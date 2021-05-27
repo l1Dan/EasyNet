@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"Photos";
     
     [[NetworkListener sharedListener] networkListenerChangeStatusUsingBlock:^(NetworkListenerStatus status) {
@@ -90,8 +91,8 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.translatesAutoresizingMaskIntoConstraints = NO;
-        _tableView.tableHeaderView = [UIView new];
-        _tableView.tableFooterView = [UIView new];
+        _tableView.tableHeaderView = [[UIView alloc] init];
+        _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.delegate = self.dataSource;
         _tableView.dataSource = self.dataSource;
     }

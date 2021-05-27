@@ -15,6 +15,12 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - MJExtension (3.2.4)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -24,6 +30,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - MJExtension
+  - RxCocoa
+  - RxSwift
   - SDWebImage
   - SVProgressHUD
   - YYCache
@@ -32,6 +40,9 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - MJExtension
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SDWebImage
     - SVProgressHUD
     - YYCache
@@ -39,10 +50,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 4133aaf9356540ab3b686207b9f433cbdcb39d31
+PODFILE CHECKSUM: ad77919c4fc5bfb06a0e9099d11ab092328ef852
 
 COCOAPODS: 1.10.1

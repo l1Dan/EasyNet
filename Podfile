@@ -12,7 +12,13 @@ target 'EasyNetDemo' do
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'YYCache'
+  
+  target 'EasyNetDemoSwift' do
+    pod 'AFNetworking'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 
+  end
 end
 
 post_install do |installer|

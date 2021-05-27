@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "NetworkListener.h"
 #import "BaseRequest.h"
+#import "PhotosTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,11 @@
     [[NetworkListener sharedListener] start];
     
     [self setupNetwork];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:[[PhotosTableViewController alloc] init]];
+    self.window.rootViewController = nvc;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
