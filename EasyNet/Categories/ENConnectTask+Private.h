@@ -77,11 +77,11 @@ FOUNDATION_EXPORT ENMethodType const ENMethodTypePatch;
 /// 拦截器完成请求，请求成功
 /// @param responseObject 请求成功 JSON 数据
 /// @param responseData 请求成功 Data 数据
-- (ENInterceptor *)connectTaskDidFinishWithResponseObject:(id)responseObject responseData:(NSData *)responseData;
+- (ENInterceptor *)connectTaskDidSuccessWithResponseObject:(id)responseObject responseData:(NSData *)responseData;
 
 /// 拦截器完成请求，请求失败
-/// @param error 错误信息
-- (ENInterceptor *)connectTaskDidError:(NSError *)error;
+/// @param responseError 错误信息
+- (ENInterceptor *)connectTaskDidFailureWithResponseError:(NSError *)responseError;
 
 @end
 

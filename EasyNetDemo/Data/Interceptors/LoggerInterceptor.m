@@ -26,7 +26,7 @@
     return interceptor;
 }
 
-- (ENInterceptor *)interceptorDidFinish:(ENInterceptor *)interceptor {
+- (ENInterceptor *)interceptorDidSuccess:(ENInterceptor *)interceptor {
     NSString *URLString = [NSString en_buildPathWithBaseURL:interceptor.baseURL requestURL:interceptor.requestURL parameters:nil];
     NSString *formated = [NSString stringWithFormat:@"[NETWORK] RESPONSE SUCCEEDED\n%@:%@\nHeaders: %@\nParameters: %@\nResponse: %@\n",
                           interceptor.method,
@@ -38,14 +38,14 @@
     return interceptor;
 }
 
-- (ENInterceptor *)interceptorDidError:(ENInterceptor *)interceptor {
+- (ENInterceptor *)interceptorDidFailure:(ENInterceptor *)interceptor {
     NSString *URLString = [NSString en_buildPathWithBaseURL:interceptor.baseURL requestURL:interceptor.requestURL parameters:nil];
     NSString *formated = [NSString stringWithFormat:@"[NETWORK] RESPONSE FAILED\n%@:%@\nHeaders: %@\nParameters: %@\nError: %@\n",
                           interceptor.method,
                           URLString,
                           interceptor.responseHeaders,
                           [NSString en_JSONPrettyPrintedWithObject:interceptor.parameters],
-                          interceptor.error];
+                          interceptor.responseError];
     NSLog(@"%@", formated);
     return interceptor;
 }

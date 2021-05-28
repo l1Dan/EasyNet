@@ -47,11 +47,11 @@ static const ENInterceptorPriority ENInterceptorPriorityDefaultLow = 250;
 
 /// 拦截请求完成数据
 /// @param interceptor ENInterceptor
-- (ENInterceptor *)interceptorDidFinish:(ENInterceptor *)interceptor;
+- (ENInterceptor *)interceptorDidSuccess:(ENInterceptor *)interceptor;
 
 /// 拦截请求失败数据
 /// @param interceptor ENInterceptor
-- (ENInterceptor *)interceptorDidError:(ENInterceptor *)interceptor;
+- (ENInterceptor *)interceptorDidFailure:(ENInterceptor *)interceptor;
 
 @end
 
@@ -67,21 +67,21 @@ static const ENInterceptorPriority ENInterceptorPriorityDefaultLow = 250;
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, NSString *> *responseHeaders;
 @property (nonatomic, strong) id responseObject;
 @property (nonatomic, strong) NSData *responseData;
-@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSError *responseError;
 
 /// 获取 requestHeaders value
 /// @param field key
 - (nullable NSString *)valueForHTTPHeaderField:(NSString *)field;
 
-/// 设置 requestHeaders value
-/// @param value 需要设置的值，如果已经存在则替换原来的值
-/// @param field key
-- (void)setValue:(nullable NSString *)value forHTTPHeaderField:(NSString *)field;
-
 /// 添加 requestHeaders value
 /// @param value 需要添加的值，如果已经存在则会使用 `,` 分割每个值
 /// @param field key
 - (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+
+/// 设置 requestHeaders value
+/// @param value 需要设置的值，如果已经存在则替换原来的值
+/// @param field key
+- (void)setValue:(nullable NSString *)value forHTTPHeaderField:(NSString *)field;
 
 /// 从字典设置 requestHeaders value，如果已经存在则替换原来的值
 /// @param requestHeaders 需要添加的 requestHeaders

@@ -48,11 +48,10 @@ static ENNetworkAgent *_ENNetworkAgent = nil;
 @property (nonatomic, strong) NSHTTPURLResponse *response;
 
 @property (nonatomic, strong) id responseObject;
-@property (nonatomic, strong, nullable) id<ENResponseJSONConvertible> convertObject;
-
 @property (nonatomic, strong) NSData *responseData;
-@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSError *responseError;
 
+@property (nonatomic, strong, nullable) id<ENResponseJSONConvertible> convertObject;
 @property (nonatomic, strong) NSMutableArray<id<ENInterceptable>> *interceptors;
 
 @end
@@ -106,7 +105,7 @@ static ENNetworkAgent *_ENNetworkAgent = nil;
     return ENResponseSerializerTypeJSON;
 }
 
-- (ENRequestCachePolicy)cachePolicy {
+- (ENRequestCachePolicy)requestCachePolicy {
     return ENRequestCachePolicyDefault;
 }
 
@@ -181,7 +180,7 @@ static ENNetworkAgent *_ENNetworkAgent = nil;
             [self setBlocksWithSuccess:success failure:^(__kindof ENConnectTask *_Nonnull connectTask) {
                 // 取出本地缓存数据
                 [ENConnectTask responseWithConnectTask:connectTask usingBlock:^(ENConnectTask *connectTask) {
-                    if (connectTask.error) {
+                    if (connectTask.responseError) {
                         if (failure) {
                             failure(connectTask);
                         }
@@ -238,7 +237,7 @@ static ENNetworkAgent *_ENNetworkAgent = nil;
 
 - (void)startWithSuccess:(ENConnectTaskBlock)success failure:(ENConnectTaskBlock)failure {
     NSAssert([[self class] networInstance] != nil, @"networInstance should not be nil");
-    [self requestWithCachePolicy:self.cachePolicy success:success failure:failure];
+    [self requestWithCachePolicy:self.requestCachePolicy success:success failure:failure];
 }
 
 - (void)startWithConvert:(Class)convert success:(ENConnectTaskBlock)success failure:(ENConnectTaskBlock)failure {
@@ -265,7 +264,7 @@ static ENNetworkAgent *_ENNetworkAgent = nil;
             }
             
             if (error && failure) {
-                connectTask.error = error ?: connectTask.error;
+                connectTask.responseError = error ?: connectTask.responseError;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     failure(connectTask);
                 });

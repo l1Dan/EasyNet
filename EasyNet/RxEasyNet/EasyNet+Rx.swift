@@ -36,7 +36,7 @@ extension Reactive where Base: ENConnectTask {
                 single(.success(task))
             } failure: { task in
                 let error = NSError(domain: "com.github.l1Dan.RxEasyNetDomain", code: -1, userInfo: nil)
-                single(.failure(task.error ?? error))
+                single(.failure(task.responseError ?? error))
             }
             return Disposables.create {
                 base.stop()
@@ -50,7 +50,7 @@ extension Reactive where Base: ENConnectTask {
                 single(.success(task))
             } failure: { task in
                 let error = NSError(domain: "com.github.l1Dan.RxEasyNetDomain", code: -1, userInfo: nil)
-                single(.failure(task.error ?? error))
+                single(.failure(task.responseError ?? error))
             }
             return Disposables.create {
                 base.stop()

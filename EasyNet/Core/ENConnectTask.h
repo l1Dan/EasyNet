@@ -127,10 +127,7 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 @property (nonatomic, strong, readonly, nullable) id parameters;
 
 /// 下载地址，可选重写，默认 nil，仅当 ENRequestMethodGet 时才会判断 resumableDownloadPath
-@property (nonatomic, strong, nullable) NSString *resumableDownloadPath;
-
-/// 是否使用自定义缓存，可选重写，默认 NO（与 HTTP 缓存策略无关）
-@property (nonatomic, assign, readonly) ENRequestCachePolicy cachePolicy;
+@property (nonatomic, strong, readonly, nullable) NSString *resumableDownloadPath;
 
 /// 请求超时时间，可选重写，默认 60s
 @property (nonatomic, assign, readonly) NSTimeInterval requestTimeout;
@@ -146,6 +143,9 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 
 /// 请求优先级，可选重写，默认 ENRequestPriorityDefault
 @property (nonatomic, assign, readonly) ENRequestPriority requestPriority;
+
+/// 是否使用自定义缓存，可选重写，默认 NO
+@property (nonatomic, assign, readonly) ENRequestCachePolicy requestCachePolicy;
 
 /// 请求序列化方式，可选重写，默认 ENRequestSerializerTypeHTTP
 @property (nonatomic, assign, readonly) ENRequestSerializerType requestSerializerType;
@@ -180,25 +180,25 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 /// 响应头，不需要重写
 @property (nonatomic, strong, readonly, nullable) NSDictionary<NSString *, NSString *> *responseHeaders;
 
+/// 响应体，不需要重写
+@property (nonatomic, strong, readonly, nullable) id responseObject;
+
 /// 响应数据，不需要重写
 @property (nonatomic, strong, readonly, nullable) NSData *responseData;
 
-/// 响应体，不需要重写
-@property (nonatomic, strong, readonly, nullable) id responseObject;
+/// 请求出错信息，不需要重写
+@property (nonatomic, strong, readonly, nullable) NSError *responseError;
 
 ///  响应体，不需要重写。遵循 id<ENResponseJSONConvertible> 转换成功的对象
 @property (nonatomic, strong, readonly, nullable) id<ENResponseJSONConvertible> convertObject;
 
-/// 请求出错信息，不需要重写
-@property (nonatomic, strong, readonly, nullable) NSError *error;
-
 /// 响应状态码，不需要重写
 @property (nonatomic, assign, readonly) NSInteger statusCode;
 
-/// 是否已经需要连接，不需要重写
+/// 是否已经取消请求，不需要重写
 @property (nonatomic, assign, readonly, getter=isCancelled) BOOL cancelled;
 
-/// 是否在连接中，不需要重写
+/// 是否正在请求中，不需要重写
 @property (nonatomic, assign, readonly, getter=isRunning) BOOL running;
 
 /// 通过代理方式获取回调数据

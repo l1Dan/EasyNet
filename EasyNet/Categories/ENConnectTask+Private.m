@@ -87,7 +87,7 @@ static const NSString *ENInterceptorScopeGlobal = @"Scope-2";
 @property (nonatomic, strong) NSHTTPURLResponse *response;
 @property (nonatomic, strong) id responseObject;
 @property (nonatomic, strong) NSData *responseData;
-@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSError *responseError;
 
 @end
 
@@ -122,7 +122,7 @@ static const NSString *ENInterceptorScopeGlobal = @"Scope-2";
                 }
             } else {
                 NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Can't found the cached data!"};
-                connectTask.error = [NSError errorWithDomain:ENConnectTaskCacheNotFoundErrorDomain code:ENConnectTaskCacheNotFoundErrorCode userInfo:userInfo];
+                connectTask.responseError = [NSError errorWithDomain:ENConnectTaskCacheNotFoundErrorDomain code:ENConnectTaskCacheNotFoundErrorCode userInfo:userInfo];
                 if (block) {
                     block(connectTask);
                 }
@@ -261,7 +261,7 @@ static const NSString *ENInterceptorScopeGlobal = @"Scope-2";
     interceptor.method = method;
     interceptor.parameters = connectTask.parameters;
     
-    interceptor.error = connectTask.error;
+    interceptor.responseError = connectTask.responseError;
     interceptor.responseHeaders = connectTask.responseHeaders;
     interceptor.responseObject = connectTask.responseObject;
     interceptor.responseData = connectTask.responseData;
@@ -298,15 +298,15 @@ static const NSString *ENInterceptorScopeGlobal = @"Scope-2";
     return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorWillStart:)];
 }
 
-- (ENInterceptor *)connectTaskDidFinishWithResponseObject:(id)responseObject responseData:(NSData *)responseData {
+- (ENInterceptor *)connectTaskDidSuccessWithResponseObject:(id)responseObject responseData:(NSData *)responseData {
     self.responseObject = responseObject;
     self.responseData = responseData;
-    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidFinish:)];
+    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidSuccess:)];
 }
 
-- (ENInterceptor *)connectTaskDidError:(NSError *)error {
-    self.error = error;
-    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidError:)];
+- (ENInterceptor *)connectTaskDidFailureWithResponseError:(NSError *)responseError {
+    self.responseError = responseError;
+    return [[self class] buildInterceptorWithConnectTask:self preformSelector:@selector(interceptorDidFailure:)];
 }
 
 @end

@@ -31,10 +31,10 @@
             
             if (success) { success(); }
         } else {
-            if (failure) { failure(request.error); }
+            if (failure) { failure(request.responseError); }
         }
     } failure:^(UserRequest * _Nonnull request) {
-        if (failure) { failure(request.error); }
+        if (failure) { failure(request.responseError); }
     }];
 }
 

@@ -56,10 +56,6 @@
     return [self.allRequestHeaders valueForKey:field.lowercaseString];
 }
 
-- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
-    [self.allRequestHeaders setValue:value forKey:field.lowercaseString];
-}
-
 - (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
     NSString *oldValue = [self valueForHTTPHeaderField:field];
     if (oldValue && value) {
@@ -67,6 +63,10 @@
     } else {
         [self setValue:value forHTTPHeaderField:field];
     }
+}
+
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
+    [self.allRequestHeaders setValue:value forKey:field.lowercaseString];
 }
 
 - (void)setAllHTTPRequestHeaders:(NSDictionary<NSString *, NSString *> *)requestHeaders {

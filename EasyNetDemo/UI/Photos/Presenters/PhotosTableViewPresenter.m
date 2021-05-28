@@ -29,10 +29,10 @@
             self.photos = photos;
             if (success) { success(); }
         } else {
-            if (failure) { failure(connectTask.error); }
+            if (failure) { failure(connectTask.responseError); }
         }
     } failure:^(__kindof ENConnectTask * _Nonnull connectTask) {
-        if (failure) { failure(connectTask.error); }
+        if (failure) { failure(connectTask.responseError); }
     }];
 }
 

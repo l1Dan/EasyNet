@@ -44,7 +44,7 @@ static pthread_mutex_t _lock;
 @property (nonatomic, strong) NSURLSessionTask *requestTask;
 @property (nonatomic, strong) id responseObject;
 @property (nonatomic, strong) NSData *responseData;
-@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSError *responseError;
 
 @end
 
@@ -204,9 +204,9 @@ static pthread_mutex_t _lock;
     
     requestSerializer.timeoutInterval = connectTask.requestTimeout;
     requestSerializer.allowsCellularAccess = connectTask.isAllowsCellularAccess;
-    if (connectTask.cachePolicy == ENRequestCachePolicyNetOnly) {
+    if (connectTask.requestCachePolicy == ENRequestCachePolicyNetOnly) {
         requestSerializer.cachePolicy = NSURLRequestReloadIgnoringCacheData; // 强制使用网络数据
-    } else if (connectTask.cachePolicy == ENRequestCachePolicyCacheOnly) {     // 强制使用本地数据
+    } else if (connectTask.requestCachePolicy == ENRequestCachePolicyCacheOnly) {     // 强制使用本地数据
         requestSerializer.cachePolicy = NSURLRequestReturnCacheDataDontLoad;
     } else {
         requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy; // 默认
@@ -393,15 +393,15 @@ static pthread_mutex_t _lock;
     }
     
     if (succeed) {
-        interceptor = [connectTask connectTaskDidFinishWithResponseObject:connectTask.responseObject responseData:connectTask.responseData];
+        interceptor = [connectTask connectTaskDidSuccessWithResponseObject:connectTask.responseObject responseData:connectTask.responseData];
     } else {
-        interceptor = [connectTask connectTaskDidError:requestError];
+        interceptor = [connectTask connectTaskDidFailureWithResponseError:requestError];
     }
     
-    if (requestError || interceptor.error) {
-        NSError *error = requestError ?: interceptor.error;
-        connectTask.error = error;
-        [self connectDidFailWithConnectTask:connectTask error:connectTask.error];
+    if (requestError || interceptor.responseError) {
+        NSError *error = requestError ?: interceptor.responseError;
+        connectTask.responseError = error;
+        [self connectDidFailWithConnectTask:connectTask error:connectTask.responseError];
     } else {
         connectTask.responseObject = interceptor.responseObject;
         connectTask.responseData = interceptor.responseData;
@@ -427,7 +427,7 @@ static pthread_mutex_t _lock;
 }
 
 - (void)connectDidFailWithConnectTask:(ENConnectTask *)connectTask error:(NSError *)error {
-    connectTask.error = error;
+    connectTask.responseError = error;
     NSURL *cacheURL = nil;
     if (connectTask.resumableDownloadPath) {
         cacheURL = [self incompleteDownloadTempPathForDownloadPath:connectTask.resumableDownloadPath];
@@ -490,9 +490,9 @@ static pthread_mutex_t _lock;
         connectTask.requestTask = [self dataTaskForConnectTask:connectTask interceptor:interceptor error:&requestSerializationError];
     }
     
-    if (requestSerializationError || interceptor.error) {
-        NSError *error = requestSerializationError ?: interceptor.error;
-        connectTask.error = error;
+    if (requestSerializationError || interceptor.responseError) {
+        NSError *error = requestSerializationError ?: interceptor.responseError;
+        connectTask.responseError = error;
         [self connectDidFailWithConnectTask:connectTask error:error];
         return;
     }

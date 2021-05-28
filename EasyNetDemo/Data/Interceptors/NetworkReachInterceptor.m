@@ -20,12 +20,12 @@ static NSInteger const NetworkReachInterceptorErrorError = -1001;
 }
 
 - (ENInterceptor *)interceptorWillStart:(ENInterceptor *)interceptor {
-    return [self interceptorDidError:interceptor];
+    return [self interceptorDidFailure:interceptor];
 }
 
-- (ENInterceptor *)interceptorDidError:(ENInterceptor *)interceptor {
+- (ENInterceptor *)interceptorDidFailure:(ENInterceptor *)interceptor {
     if (![NetworkListener sharedListener].isReachable) {
-        interceptor.error = [NSError errorWithDomain:NetworkReachInterceptorErrorDomain
+        interceptor.responseError = [NSError errorWithDomain:NetworkReachInterceptorErrorDomain
                                                 code:NetworkReachInterceptorErrorError
                                             userInfo:@{NSLocalizedDescriptionKey: NetworkReachInterceptorErrorMessage}];
     }
