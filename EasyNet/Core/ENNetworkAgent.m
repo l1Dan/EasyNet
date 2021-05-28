@@ -31,7 +31,7 @@
 #import "ENConnectTask+Private.h"
 #import "NSString+ENConnectTask.h"
 
-const char *kNetworkConcurrentQueueName = "com.lidan.EasyNet.concurrent.queue";
+const static char *kNetworkConcurrentQueueName = "com.github.l1Dan.concurrent.queue";
 
 static pthread_mutex_t _lock;
 

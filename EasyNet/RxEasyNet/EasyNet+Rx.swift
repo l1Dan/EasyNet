@@ -23,7 +23,6 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
 #if !COCOAPODS
 import EasyNet
@@ -36,7 +35,7 @@ extension Reactive where Base: ENConnectTask {
             base.start { task in
                 single(.success(task))
             } failure: { task in
-                let error = NSError(domain: "com.lidan.EasyNet.RxEasyNet", code: -1, userInfo: nil)
+                let error = NSError(domain: "com.github.l1Dan.RxEasyNetDomain", code: -1, userInfo: nil)
                 single(.failure(task.error ?? error))
             }
             return Disposables.create {
@@ -50,7 +49,7 @@ extension Reactive where Base: ENConnectTask {
             base.start(withConvert: convert) { task in
                 single(.success(task))
             } failure: { task in
-                let error = NSError(domain: "com.lidan.EasyNet.RxEasyNet", code: -1, userInfo: nil)
+                let error = NSError(domain: "com.github.l1Dan.RxEasyNetDomain", code: -1, userInfo: nil)
                 single(.failure(task.error ?? error))
             }
             return Disposables.create {

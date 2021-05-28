@@ -29,8 +29,8 @@
 NSInteger const ENConnectTaskCacheNotFoundErrorCode = -101;
 NSInteger const ENConnectTaskJSONSerializationErrorCode = -100;
 
-NSErrorDomain const ENConnectTaskCacheNotFoundErrorDomain = @"com.lidan.EasyNet.CacheNotFoundErrorDomain";
-NSErrorDomain const ENConnectTaskJSONSerializationErrorDomain = @"com.lidan.EasyNet.JSONSerializationErrorDomain";
+NSErrorDomain const ENConnectTaskCacheNotFoundErrorDomain = @"com.github.l1Dan.CacheNotFoundErrorDomain";
+NSErrorDomain const ENConnectTaskJSONSerializationErrorDomain = @"com.github.l1Dan.JSONSerializationErrorDomain";
 
 // Private
 static NSErrorUserInfoKey const ENExceptionName = @"ExceptionName";

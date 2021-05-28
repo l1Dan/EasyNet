@@ -9,7 +9,7 @@
 
 #import "NetworkListener.h"
 
-NSString *const NetworkListenerDidChangeStateNotification = @"com.lidan.EasyNetDemo.NetworkListenerDidChangeStateNotification";
+NSString *const NetworkListenerDidChangeStateNotification = @"com.github.l1Dan.EasyNetDemo.NetworkListenerDidChangeStateNotification";
 
 
 @interface NetworkListener ()

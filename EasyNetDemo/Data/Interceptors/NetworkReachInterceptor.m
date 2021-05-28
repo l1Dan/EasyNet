@@ -8,7 +8,7 @@
 #import "NetworkListener.h"
 #import "NetworkReachInterceptor.h"
 
-static NSString *const NetworkReachInterceptorErrorDomain = @"com.lidan.EasyNetDemo.NetworkReachInterceptorErrorDomain";
+static NSString *const NetworkReachInterceptorErrorDomain = @"com.github.l1Dan.EasyNetDemo.NetworkReachInterceptorErrorDomain";
 static NSString *const NetworkReachInterceptorErrorMessage = @"无可用网络，请检查网络设置";
 static NSInteger const NetworkReachInterceptorErrorError = -1001;
 

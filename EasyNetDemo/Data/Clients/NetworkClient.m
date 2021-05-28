@@ -16,7 +16,7 @@
 #import "LoggerInterceptor.h"
 #import "NetworkReachInterceptor.h"
 
-static NSString *const NetworkStorageCacheDirectory = @"com.lidan.EasyNetDemo.cache.default";
+static NSString *const NetworkStorageCacheDirectory = @"com.github.l1Dan.EasyNetDemo.cache.default";
 
 static YYCache *_customCacheInstance = nil;
 
